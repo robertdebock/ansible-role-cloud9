@@ -1,3 +1,6 @@
 ---
 # vars file for cloud9
-# cloud9_parameter: value
+cloud9_requirements:
+  - tmux
+  - gcc-c++
+   - ncurses-devel
