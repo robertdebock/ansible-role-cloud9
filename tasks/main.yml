@@ -60,6 +60,7 @@
     mode: 0750
   when:
     - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
+    - ansible_default_ipv4.address is defined
 
 - name: register cloud9 to systemd
   template:
