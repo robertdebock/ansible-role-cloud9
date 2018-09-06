@@ -1,0 +1,74 @@
+---
+# tasks file for cloud9
+- name: load default variables
+  include_vars:
+    file: default.yml
+
+- name: load os-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - default.yml
+
+- name: install requirements
+  package:
+    name: "{{ item }}"
+  with_items: "{{ cloud9_requirements }}"
+
+- name: create group
+  group:
+    name: "{{ cloud9_group }}"
+
+- name: create user
+  user:
+    name: "{{ cloud9_user }}"
+    group: "{{ cloud9_group }}"
+
+- name: create directory
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ cloud9_user }}"
+    group: "{{ cloud9_group }}"
+  with_items:
+    - "{{ cloud9_workspace }}"
+    - "{{ cloud9_installer }}"
+
+- name: clone git repository
+  git:
+    repo: "https://github.com/c9/core.git"
+    dest: "{{ cloud9_installer }}"
+  become_user: "{{ cloud9_user }}"
+
+- name: run installer
+  shell: ./scripts/install-sdk.sh
+  args:
+    chdir: "{{ cloud9_installer }}"
+    creates: "{{ cloud9_installer }}/installed"
+  become_user: "{{ cloud9_user }}"
+  notify:
+    - place installed marker
+
+- name: register cloud9 to sysvinit
+  template:
+    src: cloud9.j2
+    dest: /etc/init.d/cloud9
+    mode: 0750
+  when:
+    - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
+
+- name: register cloud9 to systemd
+  template:
+    src: cloud9.service.j2
+    dest: /etc/systemd/system/cloud9.service
+  when:
+    - ansible_service_mgr == "systemd"
+  notify:
+   - systemctl daemon-reload
+
+- name: start software
+  service:
+    name: cloud9
+    state: started
+    enabled: true

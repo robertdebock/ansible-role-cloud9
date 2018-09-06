@@ -1,0 +1,9 @@
+---
+# defaults file for cloud9
+cloud9_user: cloud9
+cloud9_group: cloud9
+cloud9_username: username
+cloud9_password: password
+cloud9_bind_address: "{{ ansible_default_ipv4.address }}"
+cloud9_installer: /home/{{ cloud9_user }}/c9sdk
+cloud9_workspace: /home/{{ cloud9_user }}/workspace
