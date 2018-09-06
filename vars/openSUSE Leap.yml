@@ -7,3 +7,4 @@ cloud9_requirements:
   - ncurses
   - ncurses-utils
   - tmux
+  - which
