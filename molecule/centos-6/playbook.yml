@@ -6,4 +6,7 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.buildtools
+    - role: robertdebock.npm
     - role: ansible-role-cloud9
