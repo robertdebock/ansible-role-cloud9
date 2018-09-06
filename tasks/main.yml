@@ -39,14 +39,17 @@
   git:
     repo: "https://github.com/c9/core.git"
     dest: "{{ cloud9_installer }}"
+    version: master
   become_user: "{{ cloud9_user }}"
+  become: yes
 
 - name: run installer
-  shell: ./scripts/install-sdk.sh
+  command: ./scripts/install-sdk.sh
   args:
     chdir: "{{ cloud9_installer }}"
     creates: "{{ cloud9_installer }}/installed"
   become_user: "{{ cloud9_user }}"
+  become: yes
   notify:
     - place installed marker
 

@@ -6,7 +6,8 @@
     state: touch
 
 - name: systemctl daemon-reload
-  command: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
   notify:
     - restart cloud9
   when:
