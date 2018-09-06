@@ -2,3 +2,4 @@
 # vars file for cloud9
 cloud9_requirements:
   - tmux
+  - git
