@@ -6,3 +6,4 @@ cloud9_requirements:
   - ncurses
   - ncurses-base
   - ncurses-libs
+  - which
