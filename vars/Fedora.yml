@@ -3,4 +3,4 @@
 cloud9_requirements:
   - tmux
   - gcc-c++
-  - ncurses-devel
+  - ncurses
