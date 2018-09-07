@@ -16,7 +16,7 @@ fi
 
 start() {
   echo -n "Starting cloud9: "
-  returncode=$(/usr/bin/node {{ cloud9_installer }}/server.js -w {{ cloud9_workspace }} --listen {{ cloud9_bind_address }} -a {{cloud9_username }}:{{ cloud9_password }} &)
+  returncode=$(daemon --user={{ cloud9_user }} /usr/bin/node {{ cloud9_installer }}/server.js -w {{ cloud9_workspace }} --listen {{ cloud9_bind_address }} -a {{cloud9_username }}:{{ cloud9_password }} &)
   touch /var/lock/subsys/cloud9
   return ${returncode}
 }
