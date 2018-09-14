@@ -9,7 +9,7 @@
   systemd:
     daemon_reload: yes
   notify:
-    - restart cloud9
+    - restart software
   when:
     - ansible_virtualization_type != "docker"
 

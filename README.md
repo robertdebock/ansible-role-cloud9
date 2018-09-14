@@ -64,6 +64,7 @@ This role has been tested against the following distributions and Ansible versio
 Example Playbook
 ----------------
 
+A minimal example:
 ```
 ---
 - name: cloud9
@@ -78,6 +79,33 @@ Example Playbook
     - role: robertdebock.cloud9
       cloud9_username: someuser
       cloud9_password: S3cr3t
+```
+
+A more realistic example:
+```
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.update
+    - role: robertdebock.firewall
+      firewall_services:
+        - name: ssh
+        - name: http
+        - name: https
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
+      httpd_applications:
+        - name: cloud9
+          location: /
+          backend_url: http://localhost:8181/
+    - role: robertdebock.buildtools
+    - role: robertdebock.npm
+    - role: robertdebock.cloud9
+      cloud9_bind_address: 127.0.0.1
 ```
 
 To install this role:
