@@ -14,16 +14,19 @@
 - name: install requirements
   package:
     name: "{{ item }}"
+    state: present
   with_items: "{{ cloud9_requirements }}"
 
 - name: create group
   group:
     name: "{{ cloud9_group }}"
+    state: present
 
 - name: create user
   user:
     name: "{{ cloud9_user }}"
     group: "{{ cloud9_group }}"
+    state: present
 
 - name: create directory
   file:
