@@ -1,0 +1,52 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: cloud9-alpine-edge
+    image: alpine:edge
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: cloud9-alpine-latest
+    image: alpine:latest
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: cloud9-archlinux
+    image: base/archlinux
+  - name: cloud9-centos-6
+    image: centos:6
+  - name: cloud9-centos-latest
+    image: centos:latest
+  - name: cloud9-debian-latest
+    image: debian:latest
+  - name: cloud9-debian-stable
+    image: debian:stable
+  - name: cloud9-debian-unstable
+    image: debian:unstable
+  - name: cloud9-fedora-latest
+    image: fedora:latest
+  - name: cloud9-fedora-rawhide
+    image: fedora:rawhide
+  - name: cloud9-gentoo
+    image: gentoo/stage3-amd64
+  - name: cloud9-opensuse-leap
+    image: opensuse:leap
+  - name: cloud9-opensuse-tumbleweed
+    image: opensuse:tumbleweed
+  - name: cloud9-ubuntu-artful
+    image: ubuntu:artful
+  - name: cloud9-ubuntu-devel
+    image: ubuntu:devel
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
+verifier:
+  name: goss
+  lint:
+    name: yamllint

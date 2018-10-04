@@ -1,0 +1,47 @@
+---
+# vars file for cloud9
+cloud9_requirements:
+  Alpine:
+    - bash
+    - g++
+    - tmux
+  Archlinux:
+    - tmux
+    - git
+  CentOS:
+    - tmux
+    - glibc-static
+    - ncurses
+  Debian:
+    - curl
+    - g++
+    - git
+    - tmux
+  Fedora:
+    - tmux
+    - gcc-c++
+    - ncurses
+    - ncurses-base
+    - ncurses-libs
+    - which
+  openSUSE Leap:
+    - curl
+    - gcc-c++
+    - git
+    - ncurses
+    - ncurses-utils
+    - tmux
+    - which
+  openSUSE Tumbleweed:
+    - curl
+    - gcc-c++
+    - git
+    - ncurses
+    - ncurses-utils
+    - tmux
+    - which
+  Ubuntu:
+    - curl
+    - g++
+    - git
+    - tmux

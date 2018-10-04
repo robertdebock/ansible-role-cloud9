@@ -1,7 +1,0 @@
----
-# vars file for cloud9
-cloud9_requirements:
-  - curl
-  - g++
-  - git
-  - tmux

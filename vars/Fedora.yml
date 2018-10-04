@@ -1,9 +1,0 @@
----
-# vars file for cloud9
-cloud9_requirements:
-  - tmux
-  - gcc-c++
-  - ncurses
-  - ncurses-base
-  - ncurses-libs
-  - which

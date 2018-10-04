@@ -1,21 +1,10 @@
 ---
 # tasks file for cloud9
-- name: load default variables
-  include_vars:
-    file: default.yml
-
-- name: load os-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-    - "{{ ansible_distribution }}.yml"
-    - default.yml
-
 - name: install requirements
   package:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ cloud9_requirements }}"
+    name: "{{ cloud9_packages[ansible_distribution]
+          | default (cloud9_packages['default'] ) }}"
+    state: "{{ cloud9_package_state }}"
 
 - name: create group
   group:
@@ -65,7 +54,7 @@
     - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
     - ansible_default_ipv4 is defined
   notify:
-    - restart software
+    - restart cloud9
 
 - name: register cloud9 to systemd
   template:
@@ -75,9 +64,9 @@
     - ansible_service_mgr == "systemd"
   notify:
     - systemctl daemon-reload
-    - restart software
+    - restart cloud9
 
-- name: start software
+- name: start cloud9
   service:
     name: cloud9
     state: started
