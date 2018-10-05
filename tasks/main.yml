@@ -2,8 +2,8 @@
 # tasks file for cloud9
 - name: install requirements
   package:
-    name: "{{ cloud9_packages[ansible_distribution]
-          | default (cloud9_packages['default'] ) }}"
+    name: "{{ cloud9_requirements[ansible_distribution]
+          | default (cloud9_requirements['default'] ) }}"
     state: "{{ cloud9_package_state }}"
 
 - name: create group
