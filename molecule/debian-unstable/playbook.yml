@@ -5,7 +5,7 @@
   become: true
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.buildtools
-    - role: robertdebock.npm
-    - role: ansible-role-cloud9
+    - robertdebock.bootstrap
+    - robertdebock.buildtools
+    - robertdebock.npm
+    - ansible-role-cloud9

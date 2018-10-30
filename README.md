@@ -18,11 +18,11 @@ This example is taken from `molecule/default/playbook.yml`:
   become: true
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.buildtools
-    - role: robertdebock.epel
-    - role: robertdebock.npm
-    - role: ansible-role-cloud9
+    - robertdebock.bootstrap
+    - robertdebock.buildtools
+    - robertdebock.epel
+    - robertdebock.npm
+    - robertdebock.cloud9
 
 ```
 
@@ -60,11 +60,14 @@ Requirements
 - Access to a repository containing packages, likely on the internet.
 - A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
 
-These roles can be installed to ensure all requirements are met:
+The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
 
-- none
+---
+- robertdebock.bootstrap
+- robertdebock.epel
+- robertdebock.buildtools
+- robertdebock.npm
 
-To install all requirements at once: `ansible-galaxy install -r requirements.yml`.
 
 Context
 -------
