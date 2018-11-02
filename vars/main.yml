@@ -1,6 +1,6 @@
 ---
 # vars file for cloud9
-cloud9_requirements:
+_cloud9_requirements:
   Alpine:
     - bash
     - g++
@@ -45,3 +45,5 @@ cloud9_requirements:
     - g++
     - git
     - tmux
+
+cloud9_requirements: "{{ _cloud9_requirements[ansible_distribution] | default(_cloud9_requirements['default']) }}"
