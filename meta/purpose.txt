@@ -1,1 +1,0 @@
-Installs the Cloud9 IDE on a machine.

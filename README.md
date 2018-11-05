@@ -3,8 +3,7 @@ cloud9
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-cloud9.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-cloud9)
 
-Installs the Cloud9 IDE on a machine.
-
+The purpose of this role is to install and configure cloud9 IDE on your system.
 
 Example Playbook
 ----------------
