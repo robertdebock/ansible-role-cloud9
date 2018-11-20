@@ -38,6 +38,8 @@ platforms:
     image: ubuntu:artful
   - name: cloud9-ubuntu-devel
     image: ubuntu:devel
+  - name: cloud9-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
