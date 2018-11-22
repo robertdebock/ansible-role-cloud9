@@ -71,4 +71,4 @@
     state: started
     enabled: true
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or cloud9_ignore_docker
