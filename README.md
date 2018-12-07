@@ -21,6 +21,7 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.buildtools
     - robertdebock.epel
     - robertdebock.npm
+    - robertdebock.git
     - robertdebock.cloud9
 
 ```
@@ -71,6 +72,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.epel
 - robertdebock.buildtools
 - robertdebock.npm
+- robertdebock.git
 
 
 Context
