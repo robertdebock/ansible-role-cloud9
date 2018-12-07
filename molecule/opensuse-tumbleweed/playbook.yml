@@ -1,12 +1,13 @@
 ---
 - name: Converge
   hosts: all
-  gather_facts: no
-  become: yes
+  gather_facts: false
+  become: true
 
   roles:
     - robertdebock.bootstrap
     - robertdebock.buildtools
     - robertdebock.epel
     - robertdebock.npm
+    - robertdebock.git
     - ansible-role-cloud9
