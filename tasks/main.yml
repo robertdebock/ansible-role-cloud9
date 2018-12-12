@@ -72,6 +72,6 @@
   service:
     name: cloud9
     state: started
-    enabled: true
+    enabled: yes
   when:
     - ansible_virtualization_type != "docker" or cloud9_ignore_docker
