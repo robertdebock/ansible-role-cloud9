@@ -10,4 +10,5 @@
     - robertdebock.epel
     - robertdebock.npm
     - robertdebock.git
+    - robertdebock.locale
     - ansible-role-cloud9
