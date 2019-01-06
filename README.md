@@ -99,17 +99,17 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
 |centos-6|no|no|no*|
-|centos-latest|yes|no|no*|
-|debian-latest|yes|no|no*|
-|debian-stable|yes|no|no*|
-|debian-unstable*|yes|no|no*|
-|fedora-latest|yes|no|no*|
-|fedora-rawhide*|yes|no|no*|
+|centos-latest|yes|yes|yes*|
+|debian-latest|yes|yes|yes*|
+|debian-stable|yes|yes|yes*|
+|debian-unstable*|yes|yes|yes*|
+|fedora-latest|yes|yes|yes*|
+|fedora-rawhide*|yes|yes|yes*|
 |opensuse-leap|no|no|no*|
 |opensuse-tumbleweed|no|no|no*|
-|ubuntu-artful|yes|no|no*|
-|ubuntu-devel*|yes|no|no*|
-|ubuntu-latest|yes|no|no*|
+|ubuntu-artful|yes|yes|yes*|
+|ubuntu-devel*|yes|yes|yes*|
+|ubuntu-latest|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
 
