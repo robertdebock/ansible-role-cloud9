@@ -15,6 +15,7 @@ provisioner:
   inventory:
     group_vars:
       all:
+        locale_ignore_docker: no
         cloud9_ignore_docker: no
   lint:
     name: ansible-lint
