@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: cloud9-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: cloud9-ubuntu-artful
-    image: ubuntu:artful
+  - name: cloud9-ubuntu-latest
+    image: ubuntu:latest
+  - name: cloud9-ubuntu-rolling
+    image: ubuntu:rolling
   - name: cloud9-ubuntu-devel
     image: ubuntu:devel
   - name: cloud9-ubuntu-latest
