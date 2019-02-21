@@ -47,26 +47,9 @@
   notify:
     - place installed marker
 
-- name: register cloud9 to sysvinit
-  template:
-    src: cloud9.j2
-    dest: /etc/init.d/cloud9
-    mode: 0750
-  when:
-    - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
-    - ansible_default_ipv4 is defined
-  notify:
-    - restart cloud9
-
-- name: register cloud9 to systemd
-  template:
-    src: cloud9.service.j2
-    dest: /etc/systemd/system/cloud9.service
-  when:
-    - ansible_service_mgr == "systemd"
-  notify:
-    - systemctl daemon-reload
-    - restart cloud9
+- name: create artifactory service
+  import_role:
+    name: robertdebock.service
 
 - name: start cloud9
   service:
