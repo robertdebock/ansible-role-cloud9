@@ -29,13 +29,6 @@ _cloud9_requirements:
     - ncurses-utils
     - tmux
     - which
-  openSUSE Tumbleweed:
-    - curl
-    - gcc-c++
-    - ncurses
-    - ncurses-utils
-    - tmux
-    - which
   Ubuntu:
     - curl
     - g++
