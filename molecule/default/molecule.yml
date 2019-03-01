@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: cloud9-opensuse-leap
     image: opensuse:leap
-  - name: cloud9-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: cloud9-ubuntu-latest
     image: ubuntu:latest
   - name: cloud9-ubuntu-rolling
