@@ -24,7 +24,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.git
     - robertdebock.locale
     - robertdebock.cloud9
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -54,12 +53,6 @@ cloud9_bind_address: "{{ ansible_default_ipv4.address }}"
 
 # To update all packages installed by this roles, set `cloud9_package_state` to `latest`.
 cloud9_package_state: present
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-cloud9_ignore_docker: yes
-
 ```
 
 Requirements
