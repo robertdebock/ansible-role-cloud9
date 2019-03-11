@@ -3,7 +3,7 @@
 - name: install requirements
   package:
     name: "{{ cloud9_requirements }}"
-    state: "{{ cloud9_package_state }}"
+    state: present
   register: cloud9_install_requirements
   until: cloud9_install_requirements is succeeded
   retries: 3

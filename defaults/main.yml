@@ -15,6 +15,3 @@ cloud9_workspace: /home/{{ cloud9_user }}/workspace
 
 # What IP address to listen on.
 cloud9_bind_address: "{{ ansible_default_ipv4.address }}"
-
-# To update all packages installed by this roles, set `cloud9_package_state` to `latest`.
-cloud9_package_state: present
