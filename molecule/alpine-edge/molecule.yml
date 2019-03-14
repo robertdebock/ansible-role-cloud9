@@ -3,22 +3,16 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: cloud9-alpine-edge
     image: alpine:edge
     command: sh -c "while true ; do sleep 1 ; done"
 provisioner:
   name: ansible
-  inventory:
-    group_vars:
-      all:
-        locale_ignore_docker: no
-        service_ignore_docker: no
-        cloud9_ignore_docker: no
   lint:
     name: ansible-lint
 scenario:
