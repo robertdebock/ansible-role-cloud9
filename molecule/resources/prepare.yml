@@ -1,8 +1,8 @@
 ---
-- name: Converge
+- name: Prepare
   hosts: all
-  gather_facts: false
-  become: true
+  gather_facts: no
+  become: yes
 
   roles:
     - robertdebock.bootstrap
@@ -11,4 +11,3 @@
     - robertdebock.npm
     - robertdebock.git
     - robertdebock.locale
-    - ansible-role-cloud9
