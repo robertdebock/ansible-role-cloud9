@@ -25,9 +25,6 @@ platforms:
   - name: cloud9-centos-latest
     image: centos:latest
     pre_build_image: yes
-  - name: cloud9-debian-latest
-    image: debian:latest
-    pre_build_image: yes
   - name: cloud9-debian-stable
     image: debian:stable
     pre_build_image: yes
