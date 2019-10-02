@@ -6,6 +6,9 @@ cloud9
 
 Install and configure cloud9 IDE on your system.
 
+<img src="https://img.shields.io/ansible/role/d/29418"/>
+<img src="https://img.shields.io/ansible/quality/29418"/>
+
 Example Playbook
 ----------------
 
@@ -117,7 +120,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
-|centos-6|no|no|no*|
+|centos-7|no|no|no*|
 |centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
