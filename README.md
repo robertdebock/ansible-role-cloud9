@@ -64,7 +64,7 @@ cloud9_installer: /home/{{ cloud9_user }}/c9sdk
 cloud9_workspace: /home/{{ cloud9_user }}/workspace
 
 # What IP address to listen on.
-cloud9_bind_address: "{{ ansible_default_ipv4.address }}"
+cloud9_bind_address: "{{ ansible_default_ipv4.address | default('127.0.0.1') }}"
 ```
 
 Requirements
@@ -120,7 +120,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
-|centos-7|no|no|no*|
+|centos-7|yes|yes|yes*|
 |centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
@@ -133,6 +133,19 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| Alpine | Python version 2.7 is required |
+| Archlinux | Python version 2.7 is required |
+| CentOS latest | Python version 2.7 is required |
+| Debian | Python version 2.7 is required |
+| openSUSE Leap | Python version 2.7 is required |
+| Ubuntu | Python version 2.7 is required |
 
 
 
