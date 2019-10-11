@@ -14,4 +14,4 @@ cloud9_installer: /home/{{ cloud9_user }}/c9sdk
 cloud9_workspace: /home/{{ cloud9_user }}/workspace
 
 # What IP address to listen on.
-cloud9_bind_address: "{{ ansible_default_ipv4.address }}"
+cloud9_bind_address: "{{ ansible_default_ipv4.address | default('127.0.0.1') }}"
