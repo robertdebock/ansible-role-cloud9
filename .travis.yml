@@ -9,23 +9,12 @@ services:
 
 env:
   matrix:
-    - image="docker-debian-systemd" tag="stable"
-    - image="docker-debian-systemd" tag="unstable"
-    - image="docker-debian-systemd"
-    - image="docker-centos-systemd"
-    - image="docker-redhat-systemd"
     - image="docker-fedora-systemd"
     - image="docker-fedora-systemd" tag="rawhide"
-    - image="docker-ubuntu-systemd" tag="rolling"
-    - image="docker-ubuntu-systemd" tag="devel"
-    - image="docker-ubuntu-systemd"
 
 matrix:
   allow_failures:
-    - env: image="docker-debian-systemd" tag="unstable"
     - env: image="docker-fedora-systemd" tag="rawhide"
-    - env: image="docker-ubuntu-systemd" tag="rolling"
-    - env: image="docker-ubuntu-systemd" tag="devel"
 
 cache:
   - pip
