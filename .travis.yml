@@ -8,13 +8,15 @@ services:
   - docker
 
 env:
+  global:
+    namespace="robertdebock"
   matrix:
-    - image="docker-fedora-systemd"
-    - image="docker-fedora-systemd" tag="rawhide"
+    - image="fedora"
+    - image="fedora" tag="rawhide"
 
 matrix:
   allow_failures:
-    - env: image="docker-fedora-systemd" tag="rawhide"
+    - env: image="fedora" tag="rawhide"
 
 cache:
   - pip

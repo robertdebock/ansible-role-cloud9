@@ -117,8 +117,8 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|docker-fedora-systemd|latest|no|
-|docker-fedora-systemd|rawhide|yes|
+|fedora|latest|no|
+|fedora|rawhide|yes|
 
 This role has been tested on these Ansible versions:
 
