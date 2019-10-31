@@ -10,12 +10,8 @@
     daemon_reload: yes
   notify:
     - restart cloud9
-  when:
-    - ansible_virtualization_type != "docker"
 
 - name: restart cloud9
   service:
     name: cloud9
     state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
