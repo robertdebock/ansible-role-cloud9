@@ -127,7 +127,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | Ubuntu | Python version 2.7 is required |
 
 
-
 Testing
 -------
 
