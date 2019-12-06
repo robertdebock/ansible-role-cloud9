@@ -1,4 +1,7 @@
 ---
+#
+# Ansible managed
+#
 repository:
   description: Install and configure cloud9 IDE on your system.
   homepage: https://robertdebock.nl/
