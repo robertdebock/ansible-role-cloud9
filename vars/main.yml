@@ -5,8 +5,6 @@ _cloud9_requirements:
     - bash
     - g++
     - tmux
-  Archlinux:
-    - tmux
   CentOS:
     - tmux
     - glibc-static
